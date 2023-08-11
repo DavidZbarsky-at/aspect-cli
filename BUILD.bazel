@@ -4,6 +4,11 @@ load("@buildifier_prebuilt//:rules.bzl", "buildifier")
 load("@io_bazel_rules_go//go:def.bzl", "nogo")
 load("@npm//:defs.bzl", "npm_link_all_packages")
 
+cc_binary(
+  name = "hello",
+  srcs = ["src.c"],
+)
+
 npm_link_all_packages(name = "node_modules")
 
 # When generating the documents for this repo bazel needs to be started so that we can generate
